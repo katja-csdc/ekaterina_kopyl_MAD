@@ -1,0 +1,2 @@
+# ekaterina_kopyl_MAD
+learning_diaries_csdc_24_mad
