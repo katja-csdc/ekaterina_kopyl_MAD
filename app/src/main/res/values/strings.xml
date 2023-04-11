@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">LectureExamples</string>
+    <string name="enter_movie_title">enter movie title</string>
+    <string name="enter_movie_year">enter movie year</string>
+    <string name="select_genres">select genres</string>
+    <string name="enter_director">enter director</string>
+    <string name="enter_actors">enter actors</string>
+    <string name="enter_plot">enter plot</string>
+    <string name="enter_rating">enter rating</string>
+    <string name="add">add</string>
+</resources>
