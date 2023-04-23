@@ -1,5 +1,11 @@
 package com.example.lectureexamples.ui.theme
 
+/*
+Themen sind ein Bündel von Designelementen,
+die wir dazu verwenden, die Optik eines UI
+zu verändern
+ */
+
 import androidx.compose.ui.graphics.Color
 
 val Purple200 = Color(0xFFBB86FC)

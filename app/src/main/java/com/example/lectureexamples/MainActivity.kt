@@ -1,6 +1,5 @@
 package com.example.lectureexamples
 
-import android.annotation.SuppressLint
 import android.os.Bundle
 import android.util.Log
 import androidx.activity.ComponentActivity
@@ -30,15 +29,47 @@ import com.example.lectureexamples.navigation.MyNavigation
 import com.example.lectureexamples.ui.theme.MovieAppTheme
 
 class MainActivity : ComponentActivity() {
-    @SuppressLint("UnusedMaterialScaffoldPaddingParameter")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        Log.d("ACTIVITY", "onCreate: ")
 
+        //Use your created navigation composable in MainActivity
+        //This will start the application with previously defined startDestination in NavHost
         setContent {
             MyApp {
                 MyNavigation()
             }
         }
+    }
+
+    override fun onStart() {
+        super.onStart()
+        Log.d("ACTIVITY", "onStart: ")
+    }
+
+    override fun onRestart() {
+        super.onRestart()
+        Log.d("ACTIVITY", "onRestart: ")
+    }
+
+    override fun onResume() {
+        super.onResume()
+        Log.d("ACTIVITY", "onResume: ")
+    }
+
+    override fun onPause() {
+        super.onPause()
+        Log.d("ACTIVITY", "onPause: ")
+    }
+
+    override fun onStop() {
+        super.onStop()
+        Log.d("ACTIVITY", "onStop: ")
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        Log.d("ACTIVITY", "onDestroy: ")
     }
 }
 
@@ -61,10 +92,10 @@ fun MovieCard(
     var showExpandedMenu by remember { mutableStateOf(false) }
     var favoriteState = isFavorite(movie)
 
-    Card(modifier = Modifier
-        .fillMaxWidth()
-        .padding(5.dp)
-        .clickable { onMovieCardClick() },
+     Card(modifier = Modifier
+         .fillMaxWidth()
+         .padding(5.dp)
+         .clickable { onMovieCardClick() },
         shape = RoundedCornerShape(corner = CornerSize(15.dp)),
         elevation = 10.dp
     ) {
@@ -78,7 +109,6 @@ fun MovieCard(
                         data = movie.images.first(),
                     )
                     Image(
-//                    painter = painterResource(id = R.drawable.avatar2),
                         painter = painter,
                         contentDescription = "Movie Poster",
                         contentScale = ContentScale.Crop
@@ -89,12 +119,11 @@ fun MovieCard(
                 }
                 Box(modifier = Modifier
                     .fillMaxSize()
-                    .padding(10.dp)
-                    .clickable {  },
+                    .padding(10.dp),
                     contentAlignment = Alignment.TopEnd,
                 ){
                     Icon(
-                        modifier =  Modifier
+                        modifier = Modifier
                             .size(30.dp)
                             .clickable { onFavoritesClick(movie) },
                         tint = MaterialTheme.colors.secondary,

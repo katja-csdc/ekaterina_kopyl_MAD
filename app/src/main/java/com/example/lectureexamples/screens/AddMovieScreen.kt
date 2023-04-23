@@ -1,6 +1,5 @@
 package com.example.lectureexamples.screens
 
-import android.view.Surface
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.grid.GridCells
 import androidx.compose.foundation.lazy.grid.LazyHorizontalGrid
@@ -15,18 +14,16 @@ import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
-import androidx.navigation.NavController
 import androidx.navigation.NavHostController
 import com.example.lectureexamples.R
 import com.example.lectureexamples.models.Genre
 import com.example.lectureexamples.models.Movie
-import com.example.lectureexamples.models.getMovies
 import com.example.lectureexamples.models.idCounter
-import com.example.lectureexamples.viewmodels.AppViewModel
+import com.example.lectureexamples.viewmodels.MovieAppViewModel
 
 @OptIn(ExperimentalMaterialApi::class)
 @Composable
-fun AddMovieScreen(navController: NavHostController, viewModel: AppViewModel,modifier: Modifier = Modifier) {
+fun AddMovieScreen(navController: NavHostController, viewModel: MovieAppViewModel, modifier: Modifier = Modifier) {
     Surface(
         modifier = modifier
             .fillMaxWidth()

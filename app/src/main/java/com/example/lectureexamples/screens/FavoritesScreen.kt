@@ -17,11 +17,12 @@ import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
 import com.example.lectureexamples.MovieCard
 import com.example.lectureexamples.navigation.MovieScreens
-import com.example.lectureexamples.viewmodels.AppViewModel
+import com.example.lectureexamples.viewmodels.MovieAppViewModel
 
 @SuppressLint("UnusedMaterialScaffoldPaddingParameter")
 @Composable
-fun FavoritesScreen(navController: NavHostController, viewModel: AppViewModel) {
+fun FavoritesScreen(navController: NavHostController,
+                    viewModel: MovieAppViewModel) {
     Scaffold(
         topBar = {
             TopAppBar {

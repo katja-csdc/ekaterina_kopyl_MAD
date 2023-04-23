@@ -16,12 +16,14 @@ import coil.compose.rememberImagePainter
 import coil.transform.RoundedCornersTransformation
 import com.example.lectureexamples.MovieCard
 import com.example.lectureexamples.models.Movie
-import com.example.lectureexamples.models.getMovies
-import com.example.lectureexamples.viewmodels.AppViewModel
+import com.example.lectureexamples.viewmodels.MovieAppViewModel
 
 @SuppressLint("UnusedMaterialScaffoldPaddingParameter")
 @Composable
-fun DetailScreen(navController: NavHostController, movieId: String, viewModel: AppViewModel) {
+fun DetailScreen(navController: NavHostController,
+                 movieId: String,
+                 viewModel: MovieAppViewModel) {
+
     val movie = viewModel.movies.first { it.id == movieId }
 
     Scaffold(

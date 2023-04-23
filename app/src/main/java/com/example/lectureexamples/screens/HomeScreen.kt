@@ -18,18 +18,18 @@ import androidx.navigation.NavHostController
 import com.example.lectureexamples.MovieCard
 import com.example.lectureexamples.models.Movie
 import com.example.lectureexamples.navigation.MovieScreens
-import com.example.lectureexamples.viewmodels.AppViewModel
+import com.example.lectureexamples.viewmodels.MovieAppViewModel
 
 @SuppressLint("UnusedMaterialScaffoldPaddingParameter")
 @Composable
-fun HomeScreen(navController: NavHostController, viewModel: AppViewModel) {
+fun HomeScreen(navController: NavHostController,
+               viewModel: MovieAppViewModel) {
     Scaffold(
         topBar = { HomeScreenTopBar(navController) }
     ) { //ich rufe da die Funktion TopBar auf
         MovieList(navController, viewModel.movies, viewModel)
     }
 }
-
 
 @Composable
 fun HomeScreenTopBar(navController: NavHostController) {
@@ -40,11 +40,11 @@ fun HomeScreenTopBar(navController: NavHostController) {
     TopAppBar(
         title = { Text(text = "Movies") },
         actions = {
-            IconButton(onClick = { showDropdownMenu = !showDropdownMenu }) {
+            IconButton(onClick = fun() { showDropdownMenu = !showDropdownMenu } ) {
                 Icon(imageVector = Icons.Default.MoreVert, contentDescription = "More")
             }
             DropdownMenu(expanded = showDropdownMenu, onDismissRequest = { showDropdownMenu = false }) {
-                DropdownMenuItem(onClick = {navController.navigate("FavoriteScreen") }) {
+                DropdownMenuItem(onClick = { navController.navigate("FavoriteScreen") }) {
                     Row {
                         Icon(imageVector = Icons.Default.Favorite,
                             contentDescription = "my favorites",
@@ -57,7 +57,7 @@ fun HomeScreenTopBar(navController: NavHostController) {
                         )
                     }
                 }
-                DropdownMenuItem(onClick = {navController.navigate("AddMovieScreen") }) {
+                DropdownMenuItem(onClick =  { navController.navigate("AddMovieScreen") }) {
                     Row {
                         Icon(imageVector = Icons.Default.AddCircle,
                             contentDescription = "add a new movie",
@@ -78,7 +78,7 @@ fun HomeScreenTopBar(navController: NavHostController) {
 @Composable
 fun MovieList(navController: NavHostController,
               movieList: List<Movie>,
-              viewModel: AppViewModel
+              viewModel: MovieAppViewModel
 ){
     LazyColumn {
         items(movieList) {movie ->

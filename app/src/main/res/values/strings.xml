@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">LectureExamples</string>
+    <string name="app_name">movie app</string>
     <string name="enter_movie_title">enter movie title</string>
     <string name="enter_movie_year">enter movie year</string>
     <string name="select_genres">select genres</string>

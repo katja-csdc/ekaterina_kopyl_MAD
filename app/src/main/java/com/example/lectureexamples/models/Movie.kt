@@ -1,6 +1,8 @@
 package com.example.lectureexamples.models
 
-data class Movie(
+import com.example.lectureexamples.data.Movie
+
+/*data class Movie(   -> übersiedelt nach data-Movie
     val id: String,
     val title: String,
     val year: String,
@@ -17,10 +19,12 @@ val idCounter: String
         _idCounter++
         return _idCounter.toString()
     }
+ */
 
 fun getMovies(): List<Movie> {
     return listOf(
-        Movie(id = "tt0499549",
+        Movie(
+//            id = "tt0499549",
             title = "Avatar",
             year = "2009",
             genre = "Action, Adventure, Fantasy",
@@ -34,7 +38,8 @@ fun getMovies(): List<Movie> {
                 "https://images-na.ssl-images-amazon.com/images/M/MV5BMTYxMDg1Nzk1MV5BMl5BanBnXkFtZTcwMDk0MTUzNA@@._V1_SX1500_CR0,0,1500,999_AL_.jpg"),
             rating = "7.9"),
 
-        Movie(id = "tt0416449",
+        Movie(
+//            id = "tt0416449",
             title = "300",
             year = "2006",
             genre = "Action, Drama, Fantasy",
@@ -47,7 +52,8 @@ fun getMovies(): List<Movie> {
             ),
             rating = "7.7"),
 
-        Movie(id = "tt0848228",
+        Movie(
+//            id = "tt0848228",
             title = "The Avengers",
             year = "2012",
             genre = "Action, Sci-Fi, Thriller",
@@ -61,7 +67,8 @@ fun getMovies(): List<Movie> {
                 "https://images-na.ssl-images-amazon.com/images/M/MV5BMTc3MzQ3NjA5N15BMl5BanBnXkFtZTcwMzY5OTY3Nw@@._V1_SX1777_CR0,0,1777,999_AL_.jpg"),
             rating = "8.1"),
 
-        Movie(id = "tt0993846",
+        Movie(
+//            id = "tt0993846",
             title = "The Wolf of Wall Street",
             year = "2013",
             genre = "Biography, Comedy, Crime",
@@ -75,7 +82,8 @@ fun getMovies(): List<Movie> {
                 "https://images-na.ssl-images-amazon.com/images/M/MV5BMTgzMTg4MDI0Ml5BMl5BanBnXkFtZTgwOTY0MzQ4MDE@._V1_SY1000_CR0,0,1553,1000_AL_.jpg"),
             rating = "8.2"),
 
-        Movie(id = "tt0816692",
+        Movie(
+//            id = "tt0816692",
             title = "Interstellar",
             year = "2014",
             genre = "Adventure, Drama, Sci-Fi",
@@ -88,7 +96,8 @@ fun getMovies(): List<Movie> {
                 "https://images-na.ssl-images-amazon.com/images/M/MV5BMzE3MTM0MTc3Ml5BMl5BanBnXkFtZTgwMDIyODgxMzE@._V1_SX1500_CR0,0,1500,999_AL_.jpg",
                 "https://images-na.ssl-images-amazon.com/images/M/MV5BNjYzNjE2NDk3N15BMl5BanBnXkFtZTgwNzEyODgxMzE@._V1_SX1500_CR0,0,1500,999_AL_.jpg"),
             rating = "8.6"),
-        Movie(id = "tt0944947",
+        Movie(
+//            id = "tt0944947",
             title = "Game of Thrones",
             year = "2011 - 2018",
             genre = "Adventure, Drama, Fantasy",
@@ -103,7 +112,8 @@ fun getMovies(): List<Movie> {
             rating = "9.5"),
 
 
-        Movie(id = "tt2306299",
+        Movie(
+//            id = "tt2306299",
             title = "Vikings",
             year = "2013–2020",
             genre = "Action, Drama, History",
@@ -117,7 +127,8 @@ fun getMovies(): List<Movie> {
                 "https://images-na.ssl-images-amazon.com/images/M/MV5BMTcxOTQ3NTA5N15BMl5BanBnXkFtZTgwMzExMDUxODE@._V1_SY1000_SX1500_AL_.jpg"),
             rating = "9.5"),
 
-        Movie(id = "tt0903747",
+        Movie(
+//            id = "tt0903747",
             title = "Breaking Bad",
             year = "2008–2013",
             genre = "Crime, Drama, Thriller",
@@ -131,7 +142,8 @@ fun getMovies(): List<Movie> {
                 "https://images-na.ssl-images-amazon.com/images/M/MV5BMjA5MTE3MTgwMF5BMl5BanBnXkFtZTgwOTQxMjUzMDE@._V1_SX1500_CR0,0,1500,999_AL_.jpg"),
             rating = "9.5"),
 
-        Movie(id = "tt2707408",
+        Movie(
+//            id = "tt2707408",
             title = "Narcos",
             year = "2015-",
             genre = "Biography, Crime, Drama",
@@ -148,6 +160,3 @@ fun getMovies(): List<Movie> {
         )
 }
 
-fun getFavoriteMovies(): List<Movie> {
-    return getMovies().subList(3, 6)
-}
